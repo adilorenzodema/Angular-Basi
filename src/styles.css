@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+button{
+    margin-right: 5%;
+}
+
+button.active{
+    color: #039be5
+}
+
+button:hover{
+    color: #039be5
+}

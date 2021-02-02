@@ -1,0 +1,6 @@
+<p>{{errormsg}}</p>
+<ul>
+    <li *ngFor="let dipendente of dipendenti">
+        <button [class.selected]="isSelected(dipendente)" (click)="onSelect(dipendente)">{{dipendente.id}} {{dipendente.nome}}</button>
+    </li>
+</ul>
