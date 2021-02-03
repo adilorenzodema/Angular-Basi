@@ -1,30 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ViewChild, Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 import { DipendentiServiceService} from '../dipendenti-service.service'
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-dipendenti',
   templateUrl: './dipendenti.component.html',
   styleUrls: ['./dipendenti.component.css']
 })
-export class DipendentiComponent implements OnInit {
+export class DipendentiComponent implements OnInit, AfterViewInit {
 
-  public dipendenti: any = []
+  public dipendenti = new MatTableDataSource();
+  public displayedColumns: string[] = ['id', 'nome', 'cognome','actions'];
+  //public dataSource = new MatTableDataSource();
   public errormsg: string = ''
   public selectedId: any
   public isLoaded: boolean = false
 
+
   constructor(private router: Router, private dipendentiService: DipendentiServiceService, private route: ActivatedRoute) { }
+
+  @ViewChild(MatSort) sort: MatSort | any;
 
   ngOnInit(): void {
     this.dipendentiService.getDipendenti()
     .subscribe(data => {
-      this.dipendenti = data
+      this.dipendenti.data = data
       this.isLoaded = true
     },
     error => {
       this.errormsg = error
       this.isLoaded = true})
+
+      console.log(this.dipendenti)
 
     // questa funzione salva nella variabile id l'id passato nell'url
     this.route.paramMap.subscribe((params: ParamMap | any) => {
@@ -33,14 +42,18 @@ export class DipendentiComponent implements OnInit {
     })
   }
 
+  ngAfterViewInit() {
+    this.dipendenti.sort = this.sort;
+  }
+
   // al click chiama la funzione che naviga nella rotta definita
-  onSelect(dip: any){
+ /*  onSelect(dip: any){
     //this.router.navigate(['Dipendenti', dip.id])
     //è uguale a quella sopra, fa un append di dip.id all'attuale route ovvero '/Dipendenti/'
     this.router.navigate([dip.id], {relativeTo: this.route})
-  }
+  } */
 
-  isSelected(dipendente: any){
+ /*  isSelected(dipendente: any){
     return dipendente.id === this.selectedId
-  }
+  } */
 }

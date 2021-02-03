@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table' 
+
 
 @NgModule({
   declarations: [],
@@ -10,12 +12,14 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   exports: [
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ]
 })
 export class AppMaterialModule { }
