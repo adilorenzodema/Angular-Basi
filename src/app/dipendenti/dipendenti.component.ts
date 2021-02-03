@@ -12,14 +12,19 @@ export class DipendentiComponent implements OnInit {
   public dipendenti: any = []
   public errormsg: string = ''
   public selectedId: any
+  public isLoaded: boolean = false
 
   constructor(private router: Router, private dipendentiService: DipendentiServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.dipendentiService.getDipendenti()
-    .subscribe(data => 
-      this.dipendenti = data, 
-      error => this.errormsg = error)
+    .subscribe(data => {
+      this.dipendenti = data
+      this.isLoaded = true
+    },
+    error => {
+      this.errormsg = error
+      this.isLoaded = true})
 
     // questa funzione salva nella variabile id l'id passato nell'url
     this.route.paramMap.subscribe((params: ParamMap | any) => {

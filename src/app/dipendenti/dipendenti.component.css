@@ -1,3 +1,20 @@
+.dipendentiBody{
+    text-align: center;
+    margin-top: 10%;
+}
+
 .selected{
     background-color: aquamarine;
+}
+
+.mat-progress-spinner::ng-deep circle {
+    stroke:cadetblue;
+}
+
+.mat-progress-spinner{
+    left: 45%;
+    zoom: 1.5;
+    position: absolute;
+    top: 35%;
+    z-index: 100;
 }

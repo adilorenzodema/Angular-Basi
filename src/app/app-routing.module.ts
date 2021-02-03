@@ -5,6 +5,7 @@ import { DipendentiDetailsComponent } from './dipendenti-details/dipendenti-deta
 import { DipendentiComponent } from './dipendenti/dipendenti.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 
+
 const routes: Routes = [
   { path: '', component: DipendentiComponent}, //utilizzata per la pagina di default
   { path: 'Dipendenti', component: DipendentiComponent},

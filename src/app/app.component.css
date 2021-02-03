@@ -1,2 +1,14 @@
 
+.mat-button{
+    background-color: #4caf50;
+}
 
+.mat-button:hover{
+    background-color: #357a38;
+    color: black;
+}
+
+.active{
+    background-color: yellow;
+    color: black;
+}
