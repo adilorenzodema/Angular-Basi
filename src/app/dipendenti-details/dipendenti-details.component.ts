@@ -23,6 +23,7 @@ export class DipendentiDetailsComponent implements OnInit {
       this.dipendenteId = id
     })
 
+    // tramite l'id preso mi prendo tutti i dati del dipendente
     this.dipendentiService.getDipendente(this.dipendenteId)
     .subscribe(data =>
       this.dipendente = data, 

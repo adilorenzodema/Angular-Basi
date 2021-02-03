@@ -47,11 +47,11 @@ export class DipendentiComponent implements OnInit, AfterViewInit {
   }
 
   // al click chiama la funzione che naviga nella rotta definita
- /*  onSelect(dip: any){
+  onSelect(dip: any){
     //this.router.navigate(['Dipendenti', dip.id])
     //è uguale a quella sopra, fa un append di dip.id all'attuale route ovvero '/Dipendenti/'
     this.router.navigate([dip.id], {relativeTo: this.route})
-  } */
+  }
 
  /*  isSelected(dipendente: any){
     return dipendente.id === this.selectedId

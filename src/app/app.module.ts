@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
-import { DipendentiServiceService} from './dipendenti-service.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { AppMaterialModule } from './app-material/app-material.module'
 
@@ -22,7 +21,7 @@ import { AppMaterialModule } from './app-material/app-material.module'
     NoopAnimationsModule,
     AppMaterialModule
   ],
-  providers: [DipendentiServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

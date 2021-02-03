@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { IDipendenti } from './dipendenti';
 
 @Injectable({
@@ -14,10 +14,10 @@ export class DipendentiServiceService {
   constructor(private http: HttpClient) { }
 
   getDipendenti(): Observable<IDipendenti[]>{
-    return this.http.get<IDipendenti[]>(this.url + "getAll").pipe(catchError(err => { throw 'error on server' }))      
+    return this.http.get<IDipendenti[]>(this.url + "getAll").pipe(catchError(err => { throw err.message || "Server Error"}))      
   }
 
   getDipendente(id: any): Observable<IDipendenti[]>{
-    return this.http.get<IDipendenti[]>(this.url + "getDipendente/" + id).pipe(catchError(err => { throw 'error on server' }))      
+    return this.http.get<IDipendenti[]>(this.url + "getDipendente/" + id).pipe(catchError(err => { throw err.message || "Server Error" }))      
   }
 }
