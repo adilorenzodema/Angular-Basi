@@ -18,7 +18,6 @@ export class DipendentiComponent implements OnInit, AfterViewInit {
   public selectedId: any
   public isLoaded: boolean = false
 
-
   constructor(private router: Router, private dipendentiService: DipendentiServiceService, private route: ActivatedRoute) { }
 
   @ViewChild(MatSort) sort: MatSort | any;
@@ -33,8 +32,6 @@ export class DipendentiComponent implements OnInit, AfterViewInit {
       this.errormsg = error
       this.isLoaded = true})
 
-      console.log(this.dipendenti)
-
     // questa funzione salva nella variabile id l'id passato nell'url
     this.route.paramMap.subscribe((params: ParamMap | any) => {
       let id = parseInt(params.get('id'))
@@ -47,12 +44,16 @@ export class DipendentiComponent implements OnInit, AfterViewInit {
   }
 
   // al click chiama la funzione che naviga nella rotta definita
-  onSelect(dip: any){
+  onEdit(dip: any){
     //this.router.navigate(['Dipendenti', dip.id])
     //è uguale a quella sopra, fa un append di dip.id all'attuale route ovvero '/Dipendenti/'
     this.router.navigate([dip.id], {relativeTo: this.route})
   }
 
+  /* onAdd(){
+    this.formAdd = true
+    this.router.navigate(['Add'], {relativeTo: this.route})
+  } */
  /*  isSelected(dipendente: any){
     return dipendente.id === this.selectedId
   } */

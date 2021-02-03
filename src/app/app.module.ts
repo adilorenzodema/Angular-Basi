@@ -6,13 +6,15 @@ import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
-import { AppMaterialModule } from './app-material/app-material.module'
+import { AppMaterialModule } from './app-material/app-material.module';
+import { DipendentiAddComponent } from './dipendenti-add/dipendenti-add.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponent,
-    PageNotfoundComponent
+    PageNotfoundComponent,
+    DipendentiAddComponent
   ],
   imports: [
     BrowserModule,
