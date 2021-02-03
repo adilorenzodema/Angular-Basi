@@ -3,6 +3,10 @@
     margin-top: 5%;
 }
 
+.dipendentiContent{
+    margin: 2%;
+}
+
 .selected{
     background-color: aquamarine;
 }
@@ -27,9 +31,14 @@ th.mat-sort-header-sorted {
 color: black;
 }
 
+.buttonAdd{
+    margin-bottom: 1%;
+}
+
 .mat-button{
     background-color: #4caf50;
     color: black;
+    margin-right: 2%;
 }
 
 .mat-button:hover{
