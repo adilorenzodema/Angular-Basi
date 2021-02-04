@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router'
+import { dipendenti } from './dipendentiClass';
 
 @Component({
   selector: 'app-dipendenti-add',
@@ -7,6 +8,8 @@ import {  Router } from '@angular/router'
   styleUrls: ['./dipendenti-add.component.css']
 })
 export class DipendentiAddComponent implements OnInit {
+
+  public dipendentiModel = new dipendenti('', '', '')
 
   constructor(private router: Router) { }
 

@@ -2,3 +2,51 @@
     text-align: center;
     margin-top: 5%;
 }
+:host {
+    display: flex;
+    flex-direction: column;
+  }
+.example-form {
+   /*  min-width: 150px;
+    max-width: 500px;
+    width: 100%; */
+    text-align: center;
+}
+.mat-button{
+  background-color: #4caf50;
+  color: black;
+  margin-right: 2%;
+}
+.mat-button:hover{
+  background-color: #357a38;
+  color: black;
+}
+
+.matInput{
+  background-color: black;
+}
+  ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label when focus*/
+    color: green !important;
+   }
+   ::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: green !important;
+   }
+   ::ng-deep .mat-input-element::placeholder{
+    color: green !important;
+    }
+  
+  /*::ng-deep .mat-focused .mat-form-field-placeholder{
+    color:red !important;
+  } */
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: green !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: green !important;;
+  }
