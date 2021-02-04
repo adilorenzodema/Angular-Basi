@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms'
 import { MatSelectModule} from '@angular/material/select'
 import { MatInputModule} from '@angular/material/input'
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -17,18 +18,20 @@ import { MatInputModule} from '@angular/material/input'
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
   ],
   exports: [
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatTableModule,
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatSortModule
   ]
 })
 export class AppMaterialModule { }

@@ -48,7 +48,7 @@ export class DipendentiDetailsComponent implements OnInit {
 
   goDipendenti(){
     let selectedId = this.dipendenteId ? this.dipendenteId : null
-    //this.router.navigate(['Dipendenti', {id: selectedId}])
-    this.router.navigate(['../', {id: selectedId}])
+    this.router.navigate(['Dipendenti'])
+    //this.router.navigate(['../', {id: selectedId}])
   }
 }

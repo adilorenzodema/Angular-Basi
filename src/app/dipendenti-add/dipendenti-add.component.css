@@ -25,21 +25,18 @@
 .matInput{
   background-color: black;
 }
-  ::ng-deep .mat-focused .mat-form-field-label {
+  ::ng-deep.mat-focused .mat-form-field-label {
     /*change color of label when focus*/
     color: green !important;
    }
-   ::ng-deep .mat-form-field-label {
-    /*change color of label*/
+   ::ng-deep.mat-form-field-label {
+    /*change color of label (placeholde)*/
     color: green !important;
    }
-   ::ng-deep .mat-input-element::placeholder{
+   ::ng-deep.mat-input-element::placeholder{
+     /*change color placeholder label*/
     color: green !important;
     }
-  
-  /*::ng-deep .mat-focused .mat-form-field-placeholder{
-    color:red !important;
-  } */
   
    ::ng-deep.mat-form-field-underline {
     /*change color of underline*/

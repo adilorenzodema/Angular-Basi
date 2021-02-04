@@ -9,11 +9,11 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './dipendenti.component.html',
   styleUrls: ['./dipendenti.component.css']
 })
-export class DipendentiComponent implements OnInit, AfterViewInit {
+export class DipendentiComponent implements AfterViewInit {
 
   public dipendenti = new MatTableDataSource();
+  //public dataSource = new MatTableDataSource(this.dipendenti)
   public displayedColumns: string[] = ['id', 'nome', 'cognome','actions'];
-  //public dataSource = new MatTableDataSource();
   public errormsg: string = ''
   public selectedId: any
   public isLoaded: boolean = false
@@ -32,11 +32,11 @@ export class DipendentiComponent implements OnInit, AfterViewInit {
       this.errormsg = error
       this.isLoaded = true})
 
-    // questa funzione salva nella variabile id l'id passato nell'url
-    this.route.paramMap.subscribe((params: ParamMap | any) => {
+    // questa funzione salva nella variabile id - l'id ricevuto nell'url
+   /*  this.route.paramMap.subscribe((params: ParamMap | any) => {
       let id = parseInt(params.get('id'))
       this.selectedId = id
-    })
+    }) */
   }
 
   ngAfterViewInit() {

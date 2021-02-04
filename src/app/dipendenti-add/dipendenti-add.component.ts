@@ -9,7 +9,7 @@ import { dipendenti } from './dipendentiClass';
 })
 export class DipendentiAddComponent implements OnInit {
 
-  public dipendentiModel = new dipendenti('', '', '')
+  public dipendentiModel = new dipendenti('','',0,'')
 
   constructor(private router: Router) { }
 
