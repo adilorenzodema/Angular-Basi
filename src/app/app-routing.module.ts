@@ -14,7 +14,7 @@ const routes: Routes = [
       {path: 'Add', component: DipendentiAddComponent}
   ] */},
   { path: 'Dipendenti/Add', component: DipendentiAddComponent},
-  { path: 'Dipendenti/:id', component: DipendentiDetailsComponent},
+  { path: 'Dipendenti/Edit', component: DipendentiDetailsComponent},
   { path: 'Animali', component: AnimaliComponent},
   { path: '**', component: PageNotfoundComponent}
 ];

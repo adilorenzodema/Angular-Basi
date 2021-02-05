@@ -1,8 +1,8 @@
 <div class="dipendentiAddBody">
-    <form #userForm="ngForm" class="example-form">
+    <form #userForm="ngForm" class="example-form" fxLayout="column">
         {{ userForm.form.valid}}
         <div>
-            <mat-form-field>
+            <mat-form-field fxFlex>
                 <mat-label>Nome</mat-label>
                 <input type="text" required matInput #nome="ngModel" placeholder="Inserisci il nome" name="Nome" [(ngModel)]="dipendentiModel.nome">
                 <mat-error *ngIf="nome.invalid">Inserisci un nome</mat-error>
@@ -10,7 +10,7 @@
             <!-- {{name.valid}} -->
         </div>
         <div>
-            <mat-form-field>
+            <mat-form-field fxFlex>
                 <mat-label>Cognome</mat-label>
                 <input type="text" required matInput #cognome="ngModel" placeholder="Inserisci il Cognome" 
                 name="Cognome" [(ngModel)]="dipendentiModel.cognome">
@@ -39,9 +39,8 @@
         </div>
         <div>
             <button [disabled]="userForm.form.invalid" type="submit" mat-button> Salva</button>
-            <button mat-button (click)="goBack()"> Indietro</button>
+            <button mat-button routerLink="/Dipendenti"> Indietro</button> <!-- (click)="goBack()" -->
         </div>
     </form>
-    
 </div>
 

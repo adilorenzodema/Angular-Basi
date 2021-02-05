@@ -13,31 +13,29 @@ export class DipendentiDetailsComponent implements OnInit {
   public dipendenteId: number | any
   public dipendente: any = []
   public errormsg: any 
-  constructor(private route: ActivatedRoute, private router: Router, private dipendentiService: DipendentiServiceService){ }
+  constructor(private route: ActivatedRoute, private router: Router, private dipendentiService: DipendentiServiceService){
+    //utilizzando state
+    this.dipendente = this.router.getCurrentNavigation()?.extras.state as IDipendenti;
+
+    }
 
   ngOnInit(){
     //appena richiamato questo componente salva in id, l'id passato nella rotta
-    //let id = this.route.snapshot.paramMap.get('id')
-    //this.dipendenteId = id
-    //utilizzando state
-    //this.dipendente = this.router.getCurrentNavigation()?.extras.state as IDipendenti;
-    this.route.paramMap.subscribe((params: ParamMap | any) => {
+    /*this.route.paramMap.subscribe((params: ParamMap | any) => {
       let id = parseInt(params.get('id'))
       this.dipendenteId = id
-    })
-    //console.log(this.router.getCurrentNavigation()?.extras.state as IDipendenti)
+    })*/
 
     // tramite l'id preso mi prendo tutti i dati del dipendente
-    this.dipendentiService.getDipendente(this.dipendenteId)
+    /*this.dipendentiService.getDipendente(this.dipendenteId)
     .subscribe(data =>
       this.dipendente = data, 
-      error => this.errormsg = error)
+      error => this.errormsg = error)*/
   }
 
   // si renderizza dopo l'aggiornamento della pagina
   goPrevious(){
     let previuosid: number | any = this.dipendenteId - 1
-    console.log(previuosid)
     this.router.navigate(['Dipendenti/', previuosid])
     /* this.dipendentiService.getDipendente(previuosid)
     .subscribe(data =>
@@ -51,7 +49,7 @@ export class DipendentiDetailsComponent implements OnInit {
   }
 
   goDipendenti(){
-    let selectedId = this.dipendenteId ? this.dipendenteId : null
+    //let selectedId = this.dipendenteId ? this.dipendenteId : null
     this.router.navigate(['Dipendenti'])
     //this.router.navigate(['../', {id: selectedId}])
   }

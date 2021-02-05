@@ -2,10 +2,10 @@
     <mat-progress-spinner mode="indeterminate" *ngIf="!isLoaded"></mat-progress-spinner>
     <p>{{errormsg}}</p>
 </div>
-<div *ngIf="isLoaded && errormsg === ''" class="dipendentiContent">
-    <button class="buttonAdd" mat-button routerLink="/Dipendenti/Add" >Aggiungi</button> <!-- [state]="dipendente" -->
+<div [style.display]="!isLoaded || errormsg !== '' ? 'none' : ''" class="dipendentiContent"> <!--ngIF con il sort non funge *ngIf="isLoaded && errormsg === ''" -->
+    <button class="buttonAdd" mat-button routerLink="/Dipendenti/Add">Aggiungi</button> <!-- [state]="dipendente" -->
     <router-outlet></router-outlet>
-    <table mat-table [dataSource]="dipendenti.data" matSort class="mat-elevation-z8">
+    <table mat-table [dataSource]="dipendenti" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
             <td mat-cell *matCellDef="let dipendente"> {{dipendente.id}} </td>
@@ -21,7 +21,7 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell  *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let dipendente">
-              <button mat-button routerLink="/Dipendenti/{{dipendente.id}}" [state]="dipendente.id">Modifica</button> <!-- (click)="onEdit(dipendente)" -->
+              <button mat-button routerLink="/Dipendenti/Edit" [state]="dipendente">Modifica</button> <!-- (click)="onEdit(dipendente)" -->
               <button mat-button >Cancella</button>
             </td>
         </ng-container>    

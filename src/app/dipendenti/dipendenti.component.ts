@@ -9,7 +9,7 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './dipendenti.component.html',
   styleUrls: ['./dipendenti.component.css']
 })
-export class DipendentiComponent implements OnInit , AfterViewInit {
+export class DipendentiComponent implements OnInit,AfterViewInit  {
 
   public dipendenti = new MatTableDataSource();
   //public dataSource = new MatTableDataSource(this.dipendenti)
@@ -27,12 +27,13 @@ export class DipendentiComponent implements OnInit , AfterViewInit {
     .subscribe(data => {
       this.dipendenti.data = data
       this.isLoaded = true
-      //this.dipendenti.sort = this.sort;
-      //console.log(this.sort)
+      console.log(this.isLoaded)
+      
     },
     error => {
       this.errormsg = error
-      this.isLoaded = true})
+      this.isLoaded = true
+    })
 
     // questa funzione salva nella variabile id - l'id ricevuto nell'url
    /*  this.route.paramMap.subscribe((params: ParamMap | any) => {
@@ -40,18 +41,17 @@ export class DipendentiComponent implements OnInit , AfterViewInit {
       this.selectedId = id
     }) */
   }
-
+ 
   ngAfterViewInit() {
     this.dipendenti.sort = this.sort; 
-    /* console.log(this.sort) */
   }
 
   // al click chiama la funzione che naviga nella rotta definita
-  onEdit(dip: any){
+  /*onEdit(dip: any){
     //this.router.navigate(['Dipendenti', dip.id])
     //è uguale a quella sopra, fa un append di dip.id all'attuale route ovvero '/Dipendenti/'
     this.router.navigate([dip.id], {relativeTo: this.route})
-  }
+  }*/
 
   /* onAdd(){
     this.formAdd = true
