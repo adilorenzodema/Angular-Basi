@@ -5,4 +5,4 @@ export class dipendenti{
         public telefono: number,
         public cars: string
     ){}
-}
+}   

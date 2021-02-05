@@ -9,7 +9,7 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './dipendenti.component.html',
   styleUrls: ['./dipendenti.component.css']
 })
-export class DipendentiComponent implements AfterViewInit {
+export class DipendentiComponent implements OnInit , AfterViewInit {
 
   public dipendenti = new MatTableDataSource();
   //public dataSource = new MatTableDataSource(this.dipendenti)
@@ -27,6 +27,8 @@ export class DipendentiComponent implements AfterViewInit {
     .subscribe(data => {
       this.dipendenti.data = data
       this.isLoaded = true
+      //this.dipendenti.sort = this.sort;
+      //console.log(this.sort)
     },
     error => {
       this.errormsg = error
@@ -40,7 +42,8 @@ export class DipendentiComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.dipendenti.sort = this.sort;
+    this.dipendenti.sort = this.sort; 
+    /* console.log(this.sort) */
   }
 
   // al click chiama la funzione che naviga nella rotta definita

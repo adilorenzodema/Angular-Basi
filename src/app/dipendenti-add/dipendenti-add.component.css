@@ -17,7 +17,7 @@
   color: black;
   margin-right: 2%;
 }
-.mat-button:hover{
+.mat-button:hover:enabled{
   background-color: #357a38;
   color: black;
 }

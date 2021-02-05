@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
+import { IDipendenti } from '../dipendenti';
 import { DipendentiServiceService} from '../dipendenti-service.service'
 
 @Component({
@@ -18,10 +19,13 @@ export class DipendentiDetailsComponent implements OnInit {
     //appena richiamato questo componente salva in id, l'id passato nella rotta
     //let id = this.route.snapshot.paramMap.get('id')
     //this.dipendenteId = id
+    //utilizzando state
+    //this.dipendente = this.router.getCurrentNavigation()?.extras.state as IDipendenti;
     this.route.paramMap.subscribe((params: ParamMap | any) => {
       let id = parseInt(params.get('id'))
       this.dipendenteId = id
     })
+    //console.log(this.router.getCurrentNavigation()?.extras.state as IDipendenti)
 
     // tramite l'id preso mi prendo tutti i dati del dipendente
     this.dipendentiService.getDipendente(this.dipendenteId)

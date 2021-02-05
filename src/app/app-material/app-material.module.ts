@@ -8,7 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms'
 import { MatSelectModule} from '@angular/material/select'
 import { MatInputModule} from '@angular/material/input'
-import { MatSortModule } from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort'
+import { MatPaginatorModule} from '@angular/material/paginator'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MatSortModule } from '@angular/material/sort';
     BrowserAnimationsModule,
     MatButtonModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ],
   exports: [
     MatProgressSpinnerModule,
@@ -31,7 +33,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatSelectModule,
     MatInputModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ]
 })
 export class AppMaterialModule { }
