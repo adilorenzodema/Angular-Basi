@@ -20,7 +20,7 @@ export class DipendentiComponent implements OnInit,AfterViewInit  {
 
   constructor(private router: Router, private dipendentiService: DipendentiServiceService, private route: ActivatedRoute) { }
 
-  @ViewChild(MatSort) sort: MatSort | any;
+  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
     this.dipendentiService.getDipendenti()

@@ -20,4 +20,8 @@ export class DipendentiServiceService {
   getDipendente(id: any): Observable<IDipendenti[]>{
     return this.http.get<IDipendenti[]>(this.url + "getDipendente/" + id).pipe(catchError(err => { throw err.message || "Server Error" }))      
   }
+
+  newDipendente(dipendente: IDipendenti[]){
+    return this.http.post<any>(this.url + "newDipendente/" + dipendente, null)
+  }
 }

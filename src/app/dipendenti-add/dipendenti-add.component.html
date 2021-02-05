@@ -1,5 +1,5 @@
 <div class="dipendentiAddBody">
-    <form #userForm="ngForm" class="example-form" fxLayout="column">
+    <form #userForm="ngForm" class="example-form" (ngSubmit)="onSubmit()">
         {{ userForm.form.valid}}
         <div>
             <mat-form-field fxFlex>
@@ -17,15 +17,15 @@
                 <mat-error *ngIf="cognome.invalid">Inserisci un cognome</mat-error>
             </mat-form-field>
         </div>
-        <div>
+       <!--  <div>
             <mat-form-field>
                 <mat-label>Telefono</mat-label>
                 <input type="tel" required matInput #telefono="ngModel" pattern="^\d{10}$" placeholder="Inserisci un numero"
                  name="Telefono" [(ngModel)]="dipendentiModel.telefono">
                 <mat-error *ngIf="telefono.invalid">Inserisci un numero corretto</mat-error>
             </mat-form-field>
-        </div>
-        <div>
+        </div> -->
+       <!--  <div>
             <mat-form-field appearance="fill">
                 <mat-label>Cars</mat-label>
                 <select matNativeControl required #cars="ngModel" name="Cars" [(ngModel)]="dipendentiModel.cars">
@@ -36,7 +36,7 @@
                 </select>
                 <mat-error *ngIf="cars.invalid">Scegli una macchina</mat-error>
             </mat-form-field>
-        </div>
+        </div> -->
         <div>
             <button [disabled]="userForm.form.invalid" type="submit" mat-button> Salva</button>
             <button mat-button routerLink="/Dipendenti"> Indietro</button> <!-- (click)="goBack()" -->
