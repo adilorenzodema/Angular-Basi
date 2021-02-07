@@ -21,8 +21,7 @@ export class DipendentiAddComponent implements OnInit {
     this.router.navigate(['Dipendenti/'])
   }*/
   onSubmit(){
-    console.log(this.dipendentiModel)
-    /*this.dipendentiService.newDipendente(this.dipendentiModel)
-          .subscribe*/
+    this.dipendentiService.newDipendente(this.dipendentiModel)
+          .subscribe(data => console.log('Success',data), error => console.log('Error' + error))
   }
 }

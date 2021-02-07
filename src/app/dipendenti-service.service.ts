@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { IDipendenti } from './dipendenti';
+import { dipendenti} from './dipendenti-add/dipendentiClass'
 
 @Injectable({
   providedIn: 'root'
 })
 export class DipendentiServiceService {
 
+  
   private url: string = "http://localhost:8080/Dipendenti/"
 
   constructor(private http: HttpClient) { }
@@ -21,7 +23,8 @@ export class DipendentiServiceService {
     return this.http.get<IDipendenti[]>(this.url + "getDipendente/" + id).pipe(catchError(err => { throw err.message || "Server Error" }))      
   }
 
-  newDipendente(dipendente: IDipendenti[]){
-    return this.http.post<any>(this.url + "newDipendente/" + dipendente, null)
+  newDipendente(dipendente: dipendenti){
+    return this.http.post<dipendenti>(this.url + "newDipendente/", dipendente)
+        .pipe(catchError(err => { throw err.message || "Server Error" }))
   }
 }
