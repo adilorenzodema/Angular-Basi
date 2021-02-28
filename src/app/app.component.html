@@ -1,6 +1,22 @@
 
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="2%" style="margin-top: 5%;">
+      <button mat-button routerLink="/Dipendenti" routerLinkActive="active">Dipendenti</button>
+      <button mat-button routerLink="/Animali" routerLinkActive="active">Animali</button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content >
+    <div style="text-align: center; color: black;">
+      <img width="80" alt="Angular Logo" src="../assets/Angular.png"/>
+      <h2> {{ title }}</h2>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
 <!-- Toolbar -->
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
   <img width="80" alt="Angular Logo" src="../assets/Angular.png"/>
   <p> {{ title }}</p>
 </div>
@@ -8,4 +24,4 @@
   <button mat-button routerLink="/Dipendenti" routerLinkActive="active">Dipendenti</button>
   <button mat-button routerLink="/Animali" routerLinkActive="active">Animali</button>
 </nav>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->

@@ -10,6 +10,8 @@ import { MatSelectModule} from '@angular/material/select'
 import { MatInputModule} from '@angular/material/input'
 import { MatSortModule } from '@angular/material/sort'
 import { MatPaginatorModule} from '@angular/material/paginator'
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MatPaginatorModule} from '@angular/material/paginator'
     MatButtonModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule,
+    FlexLayoutModule
   ],
   exports: [
     MatProgressSpinnerModule,
@@ -34,7 +38,8 @@ import { MatPaginatorModule} from '@angular/material/paginator'
     MatInputModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule
   ]
 })
 export class AppMaterialModule { }

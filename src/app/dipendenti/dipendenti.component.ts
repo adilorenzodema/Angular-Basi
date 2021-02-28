@@ -4,6 +4,7 @@ import { DipendentiServiceService} from '../dipendenti-service.service'
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
+
 @Component({
   selector: 'app-dipendenti',
   templateUrl: './dipendenti.component.html',
@@ -44,6 +45,19 @@ export class DipendentiComponent implements OnInit,AfterViewInit  {
  
   ngAfterViewInit() {
     this.dipendenti.sort = this.sort; 
+  }
+
+  deleteDipendente(id: number){
+    this.isLoaded = false;
+    this.dipendentiService.deleteDipenete(id).subscribe(data => {
+      this.isLoaded = true;
+    },
+    error => {
+      this.errormsg = error
+      this.isLoaded = true
+    })
+
+    this.dipendenti.data = this.dipendenti.data.filter((dipendente: any) => dipendente.id !== id)
   }
 
   // al click chiama la funzione che naviga nella rotta definita

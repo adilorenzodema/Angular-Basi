@@ -1,22 +1,20 @@
 <div class="dipendentiAddBody">
-    <form #userForm="ngForm" class="example-form" (ngSubmit)="onSubmit()">
+    <form fxLayout="column" fxLayoutAlign="space-between center" #userForm="ngForm" class="example-form" (ngSubmit)="onSubmit()">
         {{ userForm.form.valid}}
-        <div>
-            <mat-form-field fxFlex>
-                <mat-label>Nome</mat-label>
-                <input type="text" required matInput #nome="ngModel" placeholder="Inserisci il nome" name="Nome" [(ngModel)]="dipendentiModel.nome">
-                <mat-error *ngIf="nome.invalid">Inserisci un nome</mat-error>
-            </mat-form-field>
-            <!-- {{name.valid}} -->
-        </div>
-        <div>
-            <mat-form-field fxFlex>
-                <mat-label>Cognome</mat-label>
-                <input type="text" required matInput #cognome="ngModel" placeholder="Inserisci il Cognome" 
-                name="Cognome" [(ngModel)]="dipendentiModel.cognome">
-                <mat-error *ngIf="cognome.invalid">Inserisci un cognome</mat-error>
-            </mat-form-field>
-        </div>
+        <mat-form-field fxFlex>
+            <mat-label>Nome</mat-label>
+            <input type="text" required matInput #nome="ngModel" placeholder="Inserisci il nome" name="Nome" [(ngModel)]="dipendentiModel.nome">
+            <mat-error *ngIf="nome.invalid">Inserisci un nome</mat-error>
+        </mat-form-field>
+        <!-- {{name.valid}} -->
+    
+        <mat-form-field fxFlex>
+            <mat-label>Cognome</mat-label>
+            <input type="text" required matInput #cognome="ngModel" placeholder="Inserisci il Cognome" 
+            name="Cognome" [(ngModel)]="dipendentiModel.cognome">
+            <mat-error *ngIf="cognome.invalid">Inserisci un cognome</mat-error>
+        </mat-form-field>
+       
        <!--  <div>
             <mat-form-field>
                 <mat-label>Telefono</mat-label>

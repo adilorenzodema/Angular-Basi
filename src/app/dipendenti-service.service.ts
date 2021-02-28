@@ -27,4 +27,9 @@ export class DipendentiServiceService {
     return this.http.post<dipendenti>(this.url + "newDipendente/", dipendente)
         .pipe(catchError(err => { throw err.message || "Server Error" }))
   }
+
+  deleteDipenete(id: number){
+    return this.http.delete(this.url + "deleteDipendente/" + id)
+        .pipe(catchError(err => { throw err.message || "Server Error" }))
+  }
 }

@@ -45,3 +45,8 @@ color: black;
     background-color: #357a38;
     color: black;
 }
+
+.example-container {
+    /* height: 500px; */
+    overflow: auto;
+}

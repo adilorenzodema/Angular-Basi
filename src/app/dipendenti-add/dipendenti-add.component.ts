@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 /* import {  Router } from '@angular/router' */
 import { dipendenti } from './dipendentiClass';
 import { DipendentiServiceService } from '../dipendenti-service.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dipendenti-add',
@@ -12,7 +13,7 @@ export class DipendentiAddComponent implements OnInit {
 
   public dipendentiModel = new dipendenti('','')
 
-  constructor(private dipendentiService: DipendentiServiceService) {}
+  constructor(private dipendentiService: DipendentiServiceService, private route: Router) {}
 
   ngOnInit(): void {
   }
@@ -22,6 +23,7 @@ export class DipendentiAddComponent implements OnInit {
   }*/
   onSubmit(){
     this.dipendentiService.newDipendente(this.dipendentiModel)
-          .subscribe(data => console.log('Success',data), error => console.log('Error' + error))
+          .subscribe(data => console.log('Success',data), error => console.log('Error' + error));
+    this.route.navigate(['../']);
   }
 }
